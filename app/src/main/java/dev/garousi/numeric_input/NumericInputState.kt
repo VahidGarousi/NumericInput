@@ -1,7 +1,9 @@
 package dev.garousi.numeric_input
 
+import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import java.math.BigDecimal
 
@@ -38,5 +40,27 @@ class NumericInputState internal constructor(
         } else if (value < max) {
             "$minMessage$min"
         } else ""
+    }
+}
+
+
+@Composable
+fun rememberNumericInputState(
+    defaultValue: BigDecimal,
+    defaultTick: BigDecimal,
+    min: BigDecimal,
+    max: BigDecimal,
+    minMessage: String,
+    maxMessage: String
+): NumericInputState {
+    return remember {
+        NumericInputState(
+            defaultValue = defaultValue,
+            defaultTick = defaultTick,
+            min = min,
+            max = max,
+            minMessage = minMessage,
+            maxMessage = maxMessage,
+        )
     }
 }
