@@ -64,4 +64,6 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
     implementation("androidx.compose.material:material-icons-extended")
+    testImplementation("com.google.truth:truth:1.1.5")
+    testImplementation("io.mockk:mockk:1.13.7")
 }
